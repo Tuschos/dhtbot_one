@@ -22,7 +22,7 @@
     <!-- BASE LINK -->
 
     <link name="base_link">
-
+    
     </link>
 
 
@@ -48,10 +48,14 @@
                 <box size="0.3 0.3 0.15"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.5" x="0.3" y="0.3" z="0.15">
+        <xacro:inertial_box mass="1.2" x="0.3" y="0.3" z="0.15">
             <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEFT WHEEL LINK -->
 
@@ -79,6 +83,10 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
     <!-- RIGHT WHEEL LINK -->
 
     <joint name="right_wheel_joint" type="continuous">
@@ -104,6 +112,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <!-- CASTER WHEEL LINK -->
 
@@ -131,6 +143,11 @@
         </xacro:inertial_sphere>
     </link>
 
+    <gazebo reference="caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
 
     <!-- CAMERA LINK -->
 
@@ -146,14 +163,14 @@
             <geometry>
                 <box size="0.04 0.05 0.05"/>
             </geometry>
-            <material name="blue"/>
+            <material name="orange"/>
         </visual>
         <visual>
             <origin xyz="0.03 0 0.025" rpy="0 ${pi/2} 0"/>
             <geometry>
                 <cylinder radius="0.015" length="0.02"/>
             </geometry>
-            <material name="blue"/>
+            <material name="orange"/>
         </visual>
         <collision>
             <origin xyz="0.01 0 0.025"/>
@@ -166,4 +183,8 @@
         </xacro:inertial_box>
     </link>
     
+    <gazebo reference="camera_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
 </robot>
