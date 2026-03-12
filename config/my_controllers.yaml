@@ -1,16 +1,15 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100
-    use_sim_time: true
+    update_rate: 40 #Hz
 
-    diff_cont:
+    diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
-    joint_broad:
+    joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
       
 
-diff_cont:
+diff_drive_controller:
   ros__parameters:
 
     publish_rate: 100.0
@@ -47,8 +46,8 @@ diff_cont:
     # linear.x.has_jerk_limits: false
     #linear.x.max_velocity: 0.7
     #linear.x.min_velocity: -0.7
-    linear.x.max_acceleration: 4.0
-    linear.x.min_acceleration: -4.0
+    linear.x.max_acceleration: 2.0
+    linear.x.min_acceleration: -2.0
     # linear.x.max_jerk: NAN
     # linear.x.min_jerk: NAN
 
@@ -57,8 +56,8 @@ diff_cont:
     #angular.z.has_jerk_limits: false
     #angular.z.max_velocity: 2.5
     #angular.z.min_velocity: -2.5
-    angular.z.max_acceleration: 4.0
-    angular.z.min_acceleration: -4.0
+    angular.z.max_acceleration: 2.0
+    angular.z.min_acceleration: -2.0
     # angular.z.max_jerk: NAN
     # angular.z.min_jerk: NAN
 

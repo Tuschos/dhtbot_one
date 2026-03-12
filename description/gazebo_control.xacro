@@ -7,12 +7,12 @@
             <!-- WHEEL INFORMATION -->
             <left_joint>left_wheel_joint</left_joint>
             <right_joint>right_wheel_joint</right_joint>
-            <wheel_separation>0.35</wheel_separation>
-            <wheel_diameter>0.1</wheel_diameter>
+            <wheel_separation>0.175</wheel_separation>
+            <wheel_diameter>0.0325</wheel_diameter>
 
 
             <!-- Limits -->
-            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_torque>5</max_wheel_torque>
             <max_wheel_acceleration>1.5</max_wheel_acceleration>
 
             <!-- Output -->
@@ -22,6 +22,10 @@
             <publish_odom>true</publish_odom>
             <publish_odom_tf>true</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
+
+            <ros>
+                <namespace>/robot</namespace>
+            </ros>
 
         </plugin>
     </gazebo>

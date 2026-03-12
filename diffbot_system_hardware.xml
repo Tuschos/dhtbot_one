@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library path="dhtbot_one">
+  <class
+    name="diffbot_system_hardware/DiffBotSystemHardware"
+    type="diffbot_system_hardware::DiffBotSystemHardware"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for DHTBot diff drive robot
+    </description>
+  </class>
+</library>

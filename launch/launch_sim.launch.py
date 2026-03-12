@@ -15,9 +15,8 @@ def generate_launch_description():
 
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
-    package_name='dhtbot_one' #<--- CHANGE ME
+    package_name='dhtbot_one' 
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -38,11 +37,11 @@ def generate_launch_description():
                         output='screen')
 
     diff_drive_spawner = Node(package='controller_manager', executable='spawner',
-                              arguments=['diff_cont']
+                              arguments=['diff_drive_controller']
     )
     
     joint_broad_spawner = Node(package='controller_manager', executable='spawner',
-                              arguments=['joint_broad']
+                              arguments=['joint_state_broadcaster']
     )
 
     # Launch them all!
